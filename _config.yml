@@ -1,8 +1,8 @@
 # site settings
-title: Forty
-subtitle: by HTML5 UP
+title: Evidencia Visual
+subtitle: by asn
 email: youremailaddress@gmail.com
-description: A responsive site template designed by HTML5 Up<br /> and released under the Creative Commons.
+description: oficina para la investigación<br /> con herramientas proyectuales.
 baseurl: "" # the subpath of your site, e.g. /blog "/forty-jekyll-theme"
 url: "https://evidenciavisual.github.io" # the base hostname & protocol for your site
 author:
