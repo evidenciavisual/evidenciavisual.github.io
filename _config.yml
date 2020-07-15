@@ -1,17 +1,20 @@
 # site settings
 title: Evidencia Visual
-subtitle: by asn
+subtitle: 2020
 email: youremailaddress@gmail.com
-description: oficina para la investigación<br /> con herramientas proyectuales.
+description: taller para la investigación<br /> con herramientas proyectuales.
 baseurl: "" # the subpath of your site, e.g. /blog "/forty-jekyll-theme"
 url: "https://evidenciavisual.github.io" # the base hostname & protocol for your site
 author:
-street_address: 1234 Somewhere Road
-city: Nashville
-state: TN
+street_address: EV HQ
+city: Santiago
+state: RM
 zip_code: 55555
-country: United States of America
+country: Chile
 phone: (716) 555-5555
+lang: en 
+languages: ["en", "es"] 
+permalink: /:categories/:year/:month/:day/:title/
 
 # homepage tiles
 tiles-source: pages # accepts "posts" or "pages"
@@ -21,13 +24,13 @@ tiles-count: 6
 500px_url:
 facebook_url:
 github_url:
-gitlab_url: https://gitlab.com/u/andrewbanchich
-googleplus_url: https://plus.google.com/u/0/+AndrewBanchich
+gitlab_url: https://gitlab.com
+googleplus_url: https://plus.google.com
 instagram_url: https://instagram.com
-linkedin_url: https://www.linkedin.com/in/andrew-banchich-a4ba1195
+linkedin_url: https://www.linkedin.com
 pinterest_url:
 slack_url:
-twitter_url: https://twitter.com/andrewbanchich
+twitter_url: https://twitter.com
 
 # build settings
 markdown: kramdown
