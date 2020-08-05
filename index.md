@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Home
+title: Inicio
 landing-title: evidencia visual
 description: null
 image: null

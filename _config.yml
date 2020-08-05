@@ -5,7 +5,7 @@ email: youremailaddress@gmail.com
 description: taller para la investigación<br /> con herramientas proyectuales.
 baseurl: "" # the subpath of your site, e.g. /blog "/forty-jekyll-theme"
 url: "https://evidenciavisual.github.io" # the base hostname & protocol for your site
-author:
+author: Antonio Suazo
 street_address: EV HQ
 city: Santiago
 state: RM
