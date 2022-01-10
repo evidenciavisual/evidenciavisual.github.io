@@ -1201,7 +1201,8 @@
             // inicia imgOverlay
             for (var i = 0; i < dbEx.length; i++) {
                 var b = dbEx[i];
-                var imageUrl = 'data/imgs/'+ b[0] +'.png'
+                //var imageUrl = 'data/imgs/'+ b[0] +'.png'
+                var imageUrl = 'https://raw.githubusercontent.com/evidenciavisual/evidenciavisual.github.io/master/d/20220110/A/data/imgs/'+ b[0] +'.png'
                 var imageBounds = [ b[1], b[2] ];
                 var imgOv = L.imageOverlay(imageUrl, imageBounds).addTo(map);
                 var el = imgOv.getElement();
