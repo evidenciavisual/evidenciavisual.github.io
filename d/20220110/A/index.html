@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Estrecho de Magallanes</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+        <script src="js/leaflet.js"></script>
+        <link rel="stylesheet" href="css/leaflet.css">
+        
+
+        <link rel="stylesheet" href="css/leaflet.timedimension.control.css" />
+
+        <script type="text/javascript" src="js/html5Preloader.js"></script>
+
+        <script src="js/vis-timeline-graph2d.min.js"></script>
+        <link href="css/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+
+        <link rel="stylesheet" href="css/estilos.css">
+
+        <style>
+            html, body, #map { 
+                width: 100%;
+                height: 100%;
+                margin: 0px;
+                padding: 0px;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            .leaflet-container {
+                background: #091926;
+                z-index: 10;
+            }
+
+            #vis {
+                position: relative;
+                bottom: 62px;
+                background-color: rgba(0, 0, 0, 0.25);
+                z-index: 100;
+                /*http://jsfiddle.net/x4gSG/310/*/
+                -webkit-mask-image: radial-gradient(circle at 50% 50%, black 50%, rgba(0, 0, 0, 0) 70%);
+                mask-image: radial-gradient(circle at 50% 50%, black 50%, rgba(0, 0, 0, 0) 70%);
+                cursor: ew-resize;
+            }
+
+            .vis-timeline {
+                border: 0px solid #bfbfbf;
+            }
+
+            .vis-time-axis .vis-text {
+                color: white;
+                font-family: Gandhi serif;
+            }
+
+            .vis-custom-time.ct {
+                background-color: #ea4747;
+                width: 4px;
+                margin-left: -2px;
+                top: 1px;
+            }
+
+            .vis-custom-time > .vis-custom-time-marker {
+                margin-left: -10px;
+            }
+
+            .SVGnaves {
+                background-color: rgb(255, 0, 0, 0);
+                border: 0px;
+            }
+
+            .nA {
+                background-color: rgb(255, 0, 0, 0);
+                border: 0px;
+                fill: #86b4f9;
+            }
+
+            .nB {
+                background-color: rgb(255, 0, 0, 0);
+                border: 0px;
+                fill: #86f98a;
+            }
+
+            .nC {
+                background-color: rgb(255, 0, 0, 0);
+                border: 0px;
+                fill: #f98886;
+            }
+
+            .nD {
+                background-color: rgb(255, 0, 0, 0);
+                border: 0px;
+                fill: #f9f986;
+            }
+
+            .nE {
+                background-color: rgb(255, 0, 0, 0);
+                border: 0px;
+                fill: #d286f9;
+            }
+
+
+            .leaflet-popup-content-wrapper {
+                background-color: rgb(51 51 51 / 0.65);
+                color: white;
+                /*border: solid;
+                border-width: 0.1px;
+                border-color: rgb(255 255 255 / 0.25);*/
+            }
+
+            .leaflet-popup-content {
+                font-family:'Borgia Pro';
+                font-size: 16px;
+            }
+
+            .leaflet-control-container {
+                display: none;
+            }
+
+            #uiContinuar {
+                width: 120px;
+                height: 30px;
+                border-radius: 15px;
+                position: absolute;
+                background-color: #ea4747;
+                bottom: 90px;
+                z-index: 100;
+                margin-left: auto;
+                margin-right: auto;
+                left: 0px;
+                right: 0px;
+                text-align: center;
+                box-shadow: 2px 2px 4px #000000;
+                cursor: pointer;
+            }
+
+            #uiContinuar p{
+                width: 120px;
+                height: 30px;
+                display: table-cell;
+                vertical-align: middle;
+                font-family: Gandhi serif;
+                font-size: 12px;
+            }
+
+            #uiLinea {
+                position: absolute;
+                top: 60px;
+                height: 1px;
+                width: 100%;
+                background-color: #bfbfbf;
+                z-index: 105;
+                -webkit-mask-image: radial-gradient(circle at 50% 50%, black 50%, rgba(0, 0, 0, 0) 70%);
+                mask-image: radial-gradient(circle at 50% 50%, black 50%, rgba(0, 0, 0, 0) 70%);
+            }
+
+            #uiTitulo {
+                width: 400px;
+                height: 60px;
+                position: absolute;
+                top: 70px;
+                /*right: 16.6%;*/
+                right: 0px;
+                left: 0px;
+                margin: auto;
+                z-index: 101;
+            }
+
+            #uiTitulo p{
+                width: 400px;
+                height: 60px;
+                font-family: Gandhi serif;
+                font-weight: bolder;
+                font-size: 26px;
+                text-align: center;
+                margin: 0px;
+                font-variant: small-caps;
+                color: white;
+                text-shadow: 2px 2px 4px #000000;
+            }
+
+            #uiFoto {
+                /*width: 16.6%;*/
+                width: 313px;
+                /*height: 60px;*/
+                position: absolute;
+                top: 170px;
+                right: 16.6%;
+                text-align: right;
+                z-index: 102;
+            }
+
+            #uiFoto img{
+                /*width: 100%;*/
+                width: auto;
+                height: auto;
+                max-width: 313px;
+                max-height: 313px;
+                box-shadow: 2px 2px 4px #0d0d0d;
+            }
+
+            #uiFoto p{
+                margin-top: 5px;
+                color: #ebebeb;
+                font-family: 'Borgia Pro';
+                font-size: 14px;
+                font-style: italic;
+                text-align: right;
+                text-shadow: 2px 2px 4px #0d0d0d;
+            }
+
+
+            #uiNaves {
+                width: 16.6%;
+                height: 108px;
+                position: absolute;
+                bottom: 70px;
+                right: calc(16.6% + 15px);
+                z-index: 103;
+                text-align: right;
+                color: white;
+            }
+
+            #uiNaves h1{
+                font-family: 'Borgia Pro';
+                font-size: 13px;
+                margin-bottom: 4px;
+                margin-top: 0px;
+                margin-right: -15px;
+            }
+
+            /* The container */
+            .container {
+              display: block;
+              position: relative;
+              padding-left: 35px;
+              margin-bottom: 2px;
+              cursor: pointer;
+              font-family:'Borgia Pro';
+              font-size: 12px;
+              letter-spacing: -0.2px;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+            }
+
+            /* Hide the browser's default checkbox */
+            .container input {
+              position: absolute;
+              opacity: 0;
+              cursor: pointer;
+              height: 0;
+              width: 0;
+            }
+
+            /* Create a custom checkbox */
+            .checkmark {
+              position: absolute;
+              top: 2px;
+              right: -15px;
+              height: 9px;
+              width: 9px;
+              background-color: #999;
+              border-radius: 2px;
+            }
+
+            /* On mouse-over, add a grey background color */
+            .container:hover input ~ .checkmark {
+              background-color: #ccc;
+            }
+
+            /* When the checkbox is checked, add a blue background */
+            .container.naveA input:checked ~ .checkmark {
+              background-color: #86b4f9;
+            }
+            .container.naveB input:checked ~ .checkmark {
+              background-color: #86f98a;
+            }
+            .container.naveC input:checked ~ .checkmark {
+              background-color: #f98886;
+            }
+            .container.naveD input:checked ~ .checkmark {
+              background-color: #f9f986;
+            }
+
+            .container.naveE input:checked ~ .checkmark {
+              background-color: #d286f9;
+            }
+
+            /* Create the checkmark/indicator (hidden when not checked) */
+            .checkmark:after {
+              content: "";
+              position: absolute;
+              display: none;
+            }
+
+            /* Show the checkmark when checked */
+            .container input:checked ~ .checkmark:after {
+              /*display: block;*/
+            }
+
+            /* Style the checkmark/indicator */
+            .container .checkmark:after {
+              left: 3px;
+              top: 0px;
+              width: 2px;
+              height: 5px;
+              border: solid white;
+              border-width: 0 2px 2px 0;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+
+
+            #reloj {
+              width: 60px;
+              height: 60px;
+              margin: 50px auto;
+              position: absolute;
+              left: 0px;
+              right: 0px;
+              bottom: 20px;
+              z-index: 104;
+              /*display: none;*/
+            }
+            .circle__wrapper {
+              width: 30px;
+              height: 60px;
+              position: absolute;
+              top: 0;
+              overflow: hidden;
+            }
+            .circle__wrapper--right {
+              right: 0px;
+            }
+            .circle__wrapper--left {
+              left: 0px;
+            }
+            .circle__whole {
+              width: 46px;
+              height: 46px;
+              border: 4px solid transparent;
+              border-radius: 50%;
+              position: absolute;
+              top: 0;
+              transform: rotate(-135deg);
+            }
+            .circle__right {
+              border-top: 4px solid #ea4747;
+              border-right: 4px solid #ea4747;
+              right: 3px;
+              animation: circleRight 7s linear forwards;
+            }
+            .circle__left {
+              border-bottom: 4px solid #ea4747;
+              border-left: 4px solid #ea4747;
+              left: 3px;
+              animation: circleLeft 7s linear forwards;
+            }
+
+            @keyframes circleRight {
+              0% {
+                transform: rotate(-135deg);
+              }
+              50%,100% {
+                transform: rotate(45deg);
+              }
+            }
+            @keyframes circleLeft {
+              0%,50% {
+                transform: rotate(-135deg);
+              }
+              100% {
+                transform: rotate(45deg);
+              }
+            }
+
+            .enciende {
+                animation: fadeIn 0.5s ease-out forwards;
+            }
+
+            .apaga {
+                animation: fadeOut 0.5s ease-out forwards;
+            }
+
+            @keyframes fadeIn {
+                from {opacity: 0.0;}
+                to {opacity: 1.0;}
+            }
+
+            @keyframes fadeOut {
+                from {opacity: 1.0;}
+                to {opacity: 0.0;}
+            }
+
+
+            .overlay {
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(40,49,56,0.65);
+                z-index: 10000;
+            }
+
+            .no-js .overlay, 
+            .overlay.hide {
+                -webkit-transition: opacity 0.3s, visibility 0.3s;
+                transition: opacity 0.3s, visibility 0.3s;
+                visibility: hidden;
+            }
+
+            .info {
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                text-transform: uppercase;
+                font-weight: 700;
+                letter-spacing: 1px;
+                font-size: 80%;
+                width: 100%;
+                color: #bad4f8;
+            }
+
+            .info span {
+                display: inline-block;
+                width: 180px;
+                height: 180px;
+                padding: 10px;
+                margin: 4px;
+                text-align: center;
+                vertical-align: top;
+                background-size: 75%;
+                background-color: rgba(52,73,94,0.7);
+                background-repeat: no-repeat;
+                background-position: 50% 85%;
+            }
+
+            .info span.info-drag {
+                background-image: url(data/imgs/sMouse.svg);
+            }
+
+            .info span.info-keys {
+                background-image: url(data/imgs/sTimeline.svg);
+            }
+
+            .info span.info-switch {
+                background-image: url(data/imgs/sBotonera.svg);
+                background-size: 65%;
+            }
+
+            .info button {
+                border: 2px solid #fff;
+                border-radius: 4px;
+                background: #ffffff1a;
+                color: #fff;
+                font-weight: bold;
+                padding: 1em 2em;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                display: block;
+                margin: 1em auto;
+                opacity: 0.7;
+                outline: none;
+            }
+
+            .info button:hover {
+                cursor: pointer;        /*ew-resize para timeline*/
+                opacity: 1;
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <div id="overlay" class="overlay">
+            <div class="info">
+                <h2>Cómo interactuar</h2>
+                <span class="info-drag">Usa el mouse para mover/zoom</span>
+                <span class="info-keys">Usa y arrastra la línea de tiempo</span>
+                <span class="info-switch">Usa la leyenda para prender/apagar naves</span>
+                <button>Entendido!</button> 
+            </div>
+        </div>
+
+        <div id="map"></div>
+        <div id="vis"></div>
+        <div id="uiContinuar" style="display: none;" onclick="pasoSgte()">
+            <p>continuar</p>
+        </div> 
+
+        <div id="uiLinea"></div> 
+
+        <div id="uiTitulo" style="opacity: 0;">
+            <p>Observación desde el Monte Dinero</p>
+        </div>
+        <div id="uiFoto" style="opacity: 0;">
+            <img src="data/imgs/1.jpg">
+            <p>Hito conmemorativo en Punta Dungenes</p>
+        </div> 
+        
+        <div id="uiNaves" >
+            <h1>Naves</h1>
+            <label class="container naveA">San Antonio
+                <input type="checkbox" checked="checked">
+                <span class="checkmark" onclick="toggleNave(this, 0)"></span>
+            </label>
+            <label class="container naveB">Concepción
+                <input type="checkbox" checked="checked">
+                <span class="checkmark" onclick="toggleNave(this, 1)"></span>
+            </label>
+            <label class="container naveC">Trinidad
+                <input type="checkbox" checked="checked">
+                <span class="checkmark" onclick="toggleNave(this, 2)"></span>
+            </label>
+            <label class="container naveD">Victoria
+                <input type="checkbox" checked="checked">
+                <span class="checkmark" onclick="toggleNave(this, 3)"></span>
+            </label>
+            <label class="container naveE">Botes
+                <input type="checkbox" checked="checked">
+                <span class="checkmark" onclick="toggleNave(this, 4)"></span>
+            </label>
+        </div>
+
+        <div id="reloj" style="display: none;">
+            <div class="circle__wrapper circle__wrapper--right">
+                <div class="circle__whole circle__right"></div>
+            </div>
+            <div class="circle__wrapper circle__wrapper--left">
+                <div class="circle__whole circle__left"></div>
+            </div>
+        </div>
+
+
+        
+
+        
+        
+        <script type="text/javascript" src="js/iso8601.min.js"></script>
+
+        <script type="text/javascript" src="js/leaflet.polylineoffset.js"></script>
+
+        <script type="text/javascript" src="js/leaflet.timedimension.js"></script>
+        <script type="text/javascript" src="js/leaflet.timedimension.util.js"></script>
+        <script type="text/javascript" src="js/leaflet.timedimension.layer.js"></script>
+        <!-- <script type="text/javascript" src="js/leaflet.timedimension.layer.wms.js"></script> -->
+        <script type="text/javascript" src="js/leaflet.timedimension.layer.geojson.js"></script>
+        <script type="text/javascript" src="js/leaflet.timedimension.player.js"></script>
+        <script type="text/javascript" src="js/leaflet.timedimension.control.js"></script>
+
+        <script type="text/javascript" src="data/puntos.geojson"></script>
+        <script type="text/javascript" src="data/sIcon.js"></script>
+        <script type="text/javascript" src="data/sIcon2.js"></script>
+
+
+        <script type="text/javascript">
+            var myLoader = html5Preloader();
+
+            var aNaves = [];
+            var arImgOv = [];
+            var arLayers = [];
+
+            var cont = 0;
+
+            function addGeoJSONLayer(map, data, sN) {
+                /*var icon = L.icon({
+                    iconUrl: 'img/n'+sN+'.png',
+                    iconSize: [22, 22],
+                    iconAnchor: [11, 11]
+                });*/
+
+                var nColores = {};
+
+                switch(sN) {
+                    case 'A':
+                        nColores.fc = '#49599a';
+                        nColores.c = 'nA';
+                        break;
+                    case 'B':
+                        nColores.fc = '#519657';
+                        nColores.c = 'nB';
+                        break;
+                    case 'C':
+                        nColores.fc = '#af4448';
+                        nColores.c = 'nC';
+                        break;
+                    case 'D':
+                        nColores.fc = '#c8a415';
+                        nColores.c = 'nD';
+                        break;
+                    case 'E':
+                        nColores.fc = '#8b63c3';
+                        nColores.c = 'nE';
+                        break;
+                  default:
+                    // code block
+                }
+
+                // con iconURL
+                /*var icon = L.icon({
+                    //iconUrl: 'data/icon.svg',
+                    iconUrl: 'img/n'+sN+'.png',
+                    iconSize: [44, 44],
+                    iconAnchor: [22, 22],
+                    fillColor: nColores.fc,
+                    color: nColores.c
+                });*/
+
+                /*var estiloSVG = {
+                    background-color: rgb(255, 0, 0, 0);
+                }*/
+
+                // con html
+                // https://codepen.io/dnka/pen/gObKrmm?editors=1010
+                /*var icon = L.divIcon({
+                    className: nColores.c,
+                    html: sIcon,
+                    iconSize: [44, 44],
+                    iconAnchor: [22, 22],
+                    fillColor: nColores.fc,
+                    color: nColores.c
+                })*/
+
+                var svgIcono;
+
+                if (sN == "E") {
+                    svgIcono = sIcon2;
+                } else {
+                    svgIcono = sIcon;
+                }
+
+
+                var icon = L.divIcon({
+                    className: nColores.c,
+                    html: svgIcono,
+                    iconSize: [44, 44],
+                    iconAnchor: [22, 22],
+                    fillColor: nColores.fc,
+                    color: nColores.c
+                })
+
+                // con encodeURI
+                // https://gist.github.com/clhenrick/6791bb9040a174cd93573f85028e97af
+
+                var myStyle = {
+                    "color": nColores.fc,
+                    "weight": 4,
+                    "opacity": 0.6
+                };
+
+                var geoJSONLayer = L.geoJSON(data, {
+                    style: myStyle,
+                    pointToLayer: function (feature, latLng) {
+                        if (feature.properties.hasOwnProperty('last')) {                           
+
+                            var mNave = new L.Marker(latLng, {
+                                icon: icon
+                            });
+                            aNaves.push(mNave);
+                            return mNave;
+
+                            /*return new L.Marker(latLng, {
+                                icon: icon
+                            });*/
+                        }
+                        return L.circleMarker(latLng);
+                    }
+                });
+
+                var geoJSONTDLayer = L.timeDimension.layer.geoJson(geoJSONLayer, {
+                    updateTimeDimension: true,
+                    duration: 'PT6H0M',                 // duración de cola
+                    updateTimeDimensionMode: 'union', //
+                    addlastPoint: true                  // para marker al final
+                });
+
+                // Show both layers: the geoJSON layer to show the whole track
+                // and the timedimension layer to show the movement of the bus 
+                //geoJSONLayer.addTo(map);
+                geoJSONTDLayer.addTo(map);
+                arLayers.push(geoJSONTDLayer);
+            }
+
+            var dB = [
+
+    //  p1                              p2                                                          p3
+    //  lat         lng         z       dur fecha                       dur lat         lng         ex  audio   delay
+    //  0           1           2       3   4                           5   6           7           8   9       10
+        [-52.261433, -68.159179,9.5,    5,  '1520-10-21T14:00:00.000Z', 4,  -52.339002, -68.365287, 0,  '01c',  0],     //  0
+        [-52.623110, -68.662996,8.5,    2,  '1520-10-21T14:00:00.000Z', 2,  -52.503706, -68.867621, 1,  '01d',  0],     //  1
+        [-52.327165, -68.563827,9,      2,  '1520-10-22T06:00:00.000Z', 4,  -52.271157, -68.867368, 0,  '01e',  0],     //  2
+        [-52.480271, -69.164428,8.4,    2,  '1520-10-23T06:00:00.000Z', 4,  -52.571584, -69.545890, 0,  '01f',  0],     //  3
+        [-52.697774, -69.064804,8.4,    3,  '1520-10-23T14:00:00.000Z', 4,  -52.697774, -69.064804, 0,  '02a',  0],     //  4
+        [-52.697774, -69.064804,8.4,    2,  '1520-10-25T00:00:00.000Z', 5,  -52.485132, -68.963400, 0,  '02b',  0],     //  5
+        [-52.291105, -69.022929,9.5,    4,  '1520-10-26T00:00:00.000Z', 6,  -52.414584, -69.544392, 0,  '03a',  0],     //  6
+        [-52.510801, -69.825237,11,     2,  '1520-10-26T13:40:00.000Z', 3,  -52.486581, -69.811580, 0,  '03b',  0],     //  7
+        [-52.528235, -69.850052,9.5,    2,  '1520-10-28T00:00:00.000Z', 7,  -52.721103, -70.424979, 0,  '04a',  0],     //  8
+        [-52.792072, -70.497593,10,     2,  '1520-10-29T00:00:00.000Z', 9,  -52.906642, -70.570862, 0,  '04b',  0],     //  9
+        [-52.923393, -70.703888,10,     2,  '1520-11-01T00:00:00.000Z', 2,  -52.923393, -70.703888, 0,  'str',  0],     // 10
+        [-52.974662, -70.645872,8.7,    3,  '1520-11-02T00:00:00.000Z', 7,  -53.499852, -70.724546, 2,  '04c',  0],     // 11
+        [-53.499852, -70.724546,9.2,    8,  '1520-11-04T22:00:00.000Z', 9,  -53.805691, -70.595641, 0,  '05a',  0],     // 12  separación
+        [-53.805691, -70.595641,9.8,    6,  '1520-11-07T18:00:00.000Z', 8,  -53.638054, -70.684879, 0,  '05b',  0],     // 13  se pierde
+        [-53.638054, -70.684879,8.7,    2,  '1520-11-12T00:00:00.000Z', 7,  -53.050134, -69.568961, 0,  '05c',  0],     // 14  motín-salida
+        [-52.974662, -70.645872,8.7,    3,  '1520-11-02T00:00:00.000Z', 7,  -53.499852, -70.724546, 2,  'str',  0],     // 15  alt
+        [-53.801569, -71.047922,9.7,    3,  '1520-11-07T00:00:00.000Z', 7,  -53.603986, -71.934278, 0,  '06a',  0],     // 16  pto sardinas
+        [-53.562445, -72.094773,10.3,   3,  '1520-11-09T20:00:00.000Z', 9,  -53.531496, -72.261886, 0,  '06b',  0],     // 17  monte Morrión
+        [-53.089886, -72.769491,8.3,    4,  '1520-11-09T20:00:00.000Z', 2,  -53.089886, -72.769491, 3,  '06c',  0],     // 18  deseado
+        [-53.368926, -72.096486,8.8,    2,  '1520-11-14T00:00:00.000Z', 8,  -53.458505, -70.858081, 0,  'str',  0],     // 19
+        [-53.121395, -70.198686,8.3,    2,  '1520-11-20T00:00:00.000Z', 9,  -53.225696, -70.328079, 0,  '07a',  0],     // 20
+        [-53.411947, -70.608597,8.8,    2,  '1520-11-23T00:00:00.000Z', 6,  -53.401196, -71.843996, 0,  'str',  0],     // 21
+        [-53.294268, -72.647088,8.7,    2,  '1520-11-28T00:00:00.000Z', 12, -52.968097, -73.384164, 0,  '07b',  0]      // 22
+
+
+            ];
+
+            var dbEx = [
+                ['_vistaDinero', [-52.02343765221436, -71.03460487005233], [-53.43725319937461, -66.05284773767211] ],
+                ['_vegetales',   [-52.227831851689324, -73.92228800330983], [-54.28599724287375, -67.25352342157993] ],
+                ['_vistaMorrion',[-52.157151970310565, -75.65767028608983], [-53.89627041397847, -70.05319351216204] ]
+            ];
+
+            function m() {
+                var coordA = map.getCenter();
+                var coordB = map.getZoom();
+                console.log( coordA.lat.toFixed(6)+', '+coordA.lng.toFixed(6)+', '+coordB );                
+            }
+
+            function setDatos(i) {
+                document.getElementById("uiTitulo").children[0].innerText = puntos.features[i].properties.title;
+                document.getElementById("uiFoto").children[1].innerText = puntos.features[i].properties.pie;
+                document.getElementById("uiFoto").children[0].src = "data/imgs/"+i+".jpg";
+            }
+
+            function paso1(i) {
+                // PASO 1: mueve cam hasta encuadre donde empieza la anim ruta
+                var a = dB[i];
+                map.flyTo([a[0], a[1]], a[2], {
+                    animate: true,
+                    duration: a[3]
+                });
+                //setDatos(i);
+                setTimeout( function(){ setDatos(i); }, 700 );
+            }
+
+            function paso2(i) {
+                // PASO 2: anim ruta y timeline
+                var a = dB[i];
+                timeline.moveTo( a[4], {animation: {duration: a[5]*1000, easingFunction: "linear"}});
+                map.setView( [a[6], a[7]], a[2], {
+                  "animate": true,
+                  "pan": {
+                    "duration": a[5]
+                  }
+                });
+            }
+
+            function paso3(i) {
+                // PASO 3: prende / apaga UI (título, imgs, btns/reloj)
+
+                //setDatos(i);
+
+                //if (i) {
+                    //var a = dB[i];
+                    // popup - tr
+                    //arPtos[a[8]].togglePopup();
+                    arPtos[i].togglePopup();
+                //}
+                
+                function toggleUI(el) {
+                    var uiEl = document.getElementById(el);
+                    if ( uiEl.classList == "") {
+                        uiEl.style.display = "block";
+                        uiEl.className = "enciende";
+                    } else if ( uiEl.classList.contains('apaga') ) {
+                        uiEl.style.display = "block";
+                        uiEl.className = "enciende";
+                    } else if ( uiEl.classList.contains('enciende') ) {
+                        uiEl.className = "apaga";
+                        setTimeout( function(){ uiEl.style.display = "none"; }, 500 );
+                    }  
+                }
+                toggleUI("uiTitulo");
+                toggleUI("uiFoto");                
+
+                // circle - display:block
+                /*function toggleReloj() {
+                    var uiReloj = document.getElementById("reloj");
+                    if ( uiReloj.style.display == "none") {
+                        uiReloj.style.display = "block";
+                    } else  {
+                        uiReloj.style.display = "none";
+                    }  
+                }
+                toggleReloj();*/
+
+                // continuar
+                function toggleContinuar() {
+                    //uiContinuar
+                    var uiContinuar = document.getElementById("uiContinuar");
+                    if ( uiContinuar.style.display == "none") {
+                        uiContinuar.style.display = "block";
+                    } else  {
+                        uiContinuar.style.display = "none";
+                    } 
+                }
+                toggleContinuar();
+                console.log("cont ok");
+
+                // imgOverlay - enciende
+                function toggleImgOv(i) {
+                    //console.log(i);
+                    //console.log(dB[i][8]);
+                    if ( dB[i][8] != 0 ) {        // antes era typeof dB[i][8] !== 'undefined' cuando no existe
+                        var n = dB[i][8];
+                        var uiEl = arImgOv[n-1];
+
+                        //console.log('pasa if')
+
+                        /*if ( uiEl.classList == "") {
+                            console.log('caso A')
+                            uiEl.style.display = "block";
+                            uiEl.className = "enciende";
+                        } else if ( uiEl.classList.contains('apaga') ) {
+                            console.log('caso B')
+                            uiEl.style.display = "block";
+                            uiEl.className = "enciende";
+                        } else if ( uiEl.classList.contains('enciende') ) {
+                            console.log('caso C')
+                            uiEl.className = "apaga";
+                            setTimeout( function(){ uiEl.style.display = "none"; }, 500 );
+                        }*/
+
+                        if ( uiEl.classList.contains('apaga') ) {
+                            //console.log('caso A')
+                            uiEl.style.display = "block";
+                            uiEl.classList.toggle('enciende');
+                            uiEl.classList.toggle('apaga');
+                            document.getElementById("uiFoto").style.top = "370px";
+                        } else if ( uiEl.classList.contains('enciende') ) {
+                            //console.log('caso B')
+                            setTimeout( function(){ 
+                                uiEl.style.display = "none";
+                                document.getElementById("uiFoto").style.top = "170px";
+                            }, 500 );
+                            uiEl.classList.toggle('enciende');
+                            uiEl.classList.toggle('apaga');
+                        } else {
+                            //console.log('caso C')
+                            uiEl.style.display = "block";
+                            uiEl.classList.toggle('enciende');
+                            document.getElementById("uiFoto").style.top = "370px";
+                        }
+
+                    }
+                }
+                toggleImgOv(i);
+
+            }
+
+            function pasoSgte() {
+                paso3(cont)
+                cont = cont +1;
+
+                //caso alt
+                if (cont == 15) {
+                    var b = dB[cont];
+                    /*paso1(cont);
+                    setTimeout( function(){ paso2(cont); }, (b[3]*1000)+200 );
+                    setTimeout( function(){ cont = cont +1; p(cont); }, (b[3]*1000) + (b[5]*1000) + 200);*/
+                    paso2(cont);
+                    setTimeout( function(){ cont = cont +1; p(cont); }, (b[5]*1000) + 200);
+                
+                // caso reinicio
+                } else if (cont == 23){
+                    cont = 0;
+                    setInicio();
+                    setTimeout( function(){ p(cont); }, 200);                    
+
+                } else {
+                    p(cont);
+                }
+                
+            }
+
+            var aMix = document.createElement("AUDIO");
+            //document.body.appendChild(aMix);
+            function aPista(str, delay) {
+                if (str != 'str') {
+                    aMix.setAttribute("src", "data/audio/"+str+".mp3");
+                    setTimeout( function(){ aMix.play() }, delay+ 500 );
+                }
+                
+            }
+
+            function p(i) {
+                // recupera datos desde dB
+                var a = dB[i];
+
+                // setea y reproduce audio
+                aPista(a[9], a[10]);
+                //console.log(a[9]);
+
+                // animación
+                paso1(i);
+                setTimeout( function(){ paso2(i); }, (a[3]*1000)+200 );
+                setTimeout( function(){ paso3(i); }, (a[3]*1000) + (a[5]*1000) + 400);
+                //setTimeout( function(){ paso3(i); }, (a[3]*1000) + (a[5]*1000) + 7400 );
+            }
+
+
+            function breakAnim() {
+                // aborta paso 2
+                // movimiento timeline
+                
+                // movimiento mapa
+                map.setView(map.getCenter(), map.getZoom(), {"animate": false});
+            }
+
+
+            function scrub() {
+                var ct= map.timeDimension.getCurrentTime();
+                var nd = new Date(ct);
+                nd.setMinutes(nd.getMinutes() -180);
+                nd.setMinutes(nd.getMinutes() +40);
+                var res= map.timeDimension.setCurrentTime(nd);
+
+                player.start();
+                player.pause();
+                player.release();
+
+                var obj = timeDimension._syncedLayers[1]._currentLayer._layers;
+                obj[Object.keys(obj)[0]].setOffset(5);
+
+                timeDimension._syncedLayers[1]._duration = 'PT6H0M';
+
+                for (var i = 0; i < timeDimension._syncedLayers.length; i++) {
+                    timeDimension._syncedLayers[i]._duration = 'PT1H0M';
+                }
+
+                for (var i = 0; i < timeDimension._syncedLayers.length; i++) {
+                    timeDimension._syncedLayers[i]._duration = 'PT6H0M';
+                }
+
+                timeline.moveTo('1520-10-22', {animation: {duration: 5000, easingFunction: "linear"}})
+                timeline.moveTo('1520-10-22', {animation: {duration: 5000, easingFunction: "linear"}})
+
+                timeline.moveTo('1520-11-04T22:00:00.000Z', {animation: {duration: 5000, easingFunction: "linear"}});
+                map.flyTo([-53.805691, -70.595641], 9.2, {
+                    animate: true,
+                    duration: 5
+                });               
+
+
+                // paso 1: zoom y pan al inicio
+                map.flyTo([-53.32923271182327, -70.73822021484376], 9, {
+                    animate: true,
+                    duration: 5
+                });
+
+                // paso 2: animar tramo
+                timeline.moveTo('1520-10-21T14:00:00.000Z', {animation: {duration: 2000, easingFunction: "linear"}});
+                map.setView([-53.124285,-69.837442], 7.3, {
+                  "animate": true,
+                  "pan": {
+                    "duration": 2
+                  }
+                });
+
+                // paso 2b: prender capas complementarias [vegetacion, conos]
+                // https://codepen.io/maptastik/pen/MZprRJ
+                // https://jsfiddle.net/user2314737/Lfzrqvet/
+                //L.imageOverlay(imageUrl, imageBounds).bringToFront();
+
+                imageUrl = 'data/imgs/_vistaDinero.png'
+                imageBounds = [ [-52.02343765221436, -71.03460487005233], [-53.43725319937461, -66.05284773767211] ];
+                imgOv = L.imageOverlay(imageUrl, imageBounds).addTo(map);
+                el = imgOv.getElement();
+
+                imageUrl = 'data/imgs/_vegetales.png'
+                imageBounds = [ [-52.227831851689324, -73.92228800330983], [-54.28599724287375, -67.25352342157993] ];
+                imgOv = L.imageOverlay(imageUrl, imageBounds).addTo(map);
+                el = imgOv.getElement();
+
+                imageUrl = 'data/imgs/_vistaMorrion.png'
+                imageBounds = [ [-52.157151970310565, -75.65767028608983], [-53.89627041397847, -70.05319351216204] ];
+                imgOv = L.imageOverlay(imageUrl, imageBounds).addTo(map);
+                el = imgOv.getElement();
+
+                el.className = 'apaga';
+                el.className = 'enciende';
+                
+                
+
+                // paso 3: 
+                // ui - enciende
+                // https://stackoverflow.com/questions/195951/how-can-i-change-an-elements-class-with-javascript
+
+                function toggleUI(el) {
+                    var uiEl = document.getElementById(el);
+                    if ( uiEl.classList == "") {
+                        uiEl.className = "enciende";
+                    } else if ( uiEl.classList.contains('apaga') ) {
+                        uiEl.className = "enciende";
+                    } else if ( uiEl.classList.contains('enciende') ) {
+                        uiEl.className = "apaga";
+                    }  
+                }
+                toggleUI("uiTitulo");
+                toggleUI("uiFoto");
+
+                // popup - tr
+                arPtos[2].togglePopup();
+
+                // circle - display:block
+                function toggleReloj() {
+                    var uiReloj = document.getElementById("reloj");
+                    if ( uiReloj.style.display == "none") {
+                        uiReloj.style.display = "block";
+                    } else  {
+                        uiReloj.style.display = "none";
+                    }  
+                }
+                toggleReloj();
+
+                
+
+            }
+
+            var map = L.map('map', {
+                zoom: 7.3,
+                //fullscreenControl: true,
+                zoomControl: true,
+                center: [-53.124285,-69.837442],
+                zoomDelta: 0.05,
+                zoomSnap: 0,
+                fadeAnimation: true,
+                zoomAnimation: true
+            });
+
+            //L.control.zoom().addTo(map);
+
+            var osmLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                //attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            });
+            osmLayer.addTo(map);
+
+            // TimeDimension
+            var timeDimension = new L.TimeDimension({
+                    //period: "PT5M",
+                });
+            map.timeDimension = timeDimension;
+
+            // player
+            var player = new L.TimeDimension.Player({
+                transitionTime: 50,            // ms entre times en TimeDimension
+                loop: true,
+                startOver: true
+            }, timeDimension);
+
+            // control
+            var timeDimensionControl = new L.Control.TimeDimension({
+                player:        player,
+                timeDimension: timeDimension,
+                //position:      'bottomleft',
+                autoPlay:      false,
+                /*minSpeed:      1,
+                speedStep:     0.5,
+                maxSpeed:      15,*/
+                timeSliderDragUpdate: true
+            });
+            //map.addControl(timeDimensionControl);
+
+
+            // vis init
+            var container = document.getElementById('vis');
+
+            // Create a DataSet (allows two way data-binding)
+            var items = []
+
+            // Configuration for the Timeline
+                var options = {
+                height: '50px',
+                //min: new Date(1520, 9, 20),                 // lower limit of visible range
+                //max: new Date(1520, 9, 24),                 // upper limit of visible range
+                zoomMin: 1000 * 60 * 60 * 24 * 6,  // 12 meses en milliseconds
+                zoomMax: 1000 * 60 * 60 * 24 * 6,     // about three months in milliseconds
+                start: new Date(1520, 9, 19),
+                end: new Date(1520, 9, 23),
+                showCurrentTime: false,
+                moment: function (date) {
+                  return vis.moment(date).utc();
+                }
+              };
+
+            // inicia Timeline
+            var timeline = new vis.Timeline(container, items, options);
+
+            var rangeTl = (timeline.range.end - timeline.range.start)/2;
+            var fecha;
+
+            function actualizaFecha() {
+                rangeTl = (timeline.range.end - timeline.range.start)/2;
+                fecha = timeline.range.start + rangeTl;
+            }
+
+            function mueveTline() {
+                //actualizaFecha()
+                map.timeDimension.setCurrentTime(fecha);
+            };
+
+            function mueveCT() {
+                timeline.setCustomTime(fecha, "ct");
+            }
+
+            timeline.on("rangechange", function (properties) {
+              //logEvent("rangechanged", properties);
+              //console.log(properties)
+              actualizaFecha();
+              mueveTline();
+              mueveCT();
+            });
+
+            
+            timeline.addCustomTime(fecha, "ct");
+            
+            actualizaFecha();
+            mueveTline();
+
+            
+
+            var dList = [
+                'data/nA_001.geojson', 
+                'data/nB_001.geojson',
+                'data/nC_001.geojson',
+                'data/nD_001.geojson',
+                'data/nE_001.geojson'
+            ];
+
+            myLoader.on('finish', function(){
+                for (var i = 0; i < dList.length; i++) {
+                    var response = myLoader.getFile(i);
+                    var data = JSON.parse(response);
+                    var nave = data.features[0].properties.name.charAt(4);
+                    addGeoJSONLayer(map, data, nave);
+                }
+                //myLoader.getFile(i)
+                console.log('All assets loaded.'); 
+            });
+
+            myLoader.addFiles(dList);
+
+
+            var icPtos = L.icon({
+                iconUrl: 'img/brujula.png',
+                iconSize: [22, 22],
+                iconAnchor: [11, 11]
+            });
+
+            var arPtos = [];
+
+            function onEachFeature(feature, layer) {
+                // does this feature have a property named popupContent?
+                if (feature.properties && feature.properties.Hito) {
+                    //layer.bindPopup(feature.properties.Hito);
+                    layer.bindPopup(feature.properties.Hito, {
+                        //keepInView: true,
+                        closeButton: false,
+                        offset: L.point(0, -25),
+                        closeOnClick: false,
+                        autoClose: false
+                    });
+                }
+
+                arPtos.push(layer);
+            }
+
+            L.geoJSON(puntos, {
+                onEachFeature: onEachFeature,
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, {
+                        icon: icPtos
+                        /*radius: 6,
+                        fillColor: "#ea4747",
+                        color: "#000",
+                        weight: 1,
+                        opacity: 1,
+                        fillOpacity: 0.8*/
+                    });
+                }
+            }).addTo(map);
+
+
+            // inicia imgOverlay
+            for (var i = 0; i < dbEx.length; i++) {
+                var b = dbEx[i];
+                var imageUrl = 'data/imgs/'+ b[0] +'.png'
+                var imageBounds = [ b[1], b[2] ];
+                var imgOv = L.imageOverlay(imageUrl, imageBounds).addTo(map);
+                var el = imgOv.getElement();
+                arImgOv.push(el);
+
+                el.style.display = "none";
+                el.style.opacity = 0;
+            }
+
+            //timeline.moveTo('1520-10-20', {animation: {duration: 100, easingFunction: "linear"}})
+            function setInicio() {
+                timeline.moveTo('1520-10-21', {animation: {duration: 100, easingFunction: "linear"}});
+                setTimeout( function(){ 
+                    actualizaFecha();
+                    mueveTline();
+                    mueveCT();
+                }, 150 );
+            }
+
+            setInicio();
+            
+
+            // 'cómo usar' al inicio
+            var overlay = document.getElementById( 'overlay' );
+            var overlayClose = overlay.querySelector( 'button' );
+            var closeOverlay = function() {
+                //classie.add( overlay, 'hide' );
+                overlay.classList.add('apaga');     //remove
+                setTimeout( function(){ 
+                    overlay.style.display = "none";
+                    p(cont);
+                }, 500 );
+            };
+            overlayClose.addEventListener( 'click', closeOverlay );
+
+            
+            /*p(cont);
+            console.log(cont)*/
+
+            
+            // BOTONERA
+            var cNaves = ['nA', 'nB', 'nC', 'nD', 'nE'];
+            function toggleNave(e,num) {
+                //VIA leaflet: arLayers[1]._currentLayer.options.style.opacity = 0.6
+                //VIA CSS: leaflet-overlay-pane > svg > g > 0..4
+                //document.getElementsByTagName("svg")[4].children[4]       //no sirve porque cambia segun fecha
+                //https://gis.stackexchange.com/questions/234588/leaflet-how-to-make-geojson-layer-transparent-not-visible-on-map
+                var estelasEl = document.getElementsByClassName("leaflet-overlay-pane")[0].getElementsByTagName("svg")[0].firstElementChild;
+
+                if (e.parentElement.firstElementChild.checked) {
+                    // estela
+                    if (estelasEl.children[num]) { estelasEl.children[num].style.strokeOpacity = 0; }
+
+                    //nave
+                    if (document.getElementsByClassName(cNaves[num])[0]) { document.getElementsByClassName(cNaves[num])[0].style.opacity = 0 }
+                    //document.getElementsByClassName(cNaves[num])
+                } else {
+                    // estela
+                    if (estelasEl.children[num]) { estelasEl.children[num].style.strokeOpacity = 0.6; }
+
+                    //nave
+                    if (document.getElementsByClassName(cNaves[num])[0]) { document.getElementsByClassName(cNaves[num])[0].style.opacity = 1 }
+                }
+                
+            }
+            
+
+            // encontrar 'next' según timeline
+            // evitar mover CT
+            // imgOverlay 3 sacar ruta incrustada en la img
+            
+
+            
+            
+
+        </script>
+
+         
+
+    </body>
+</html>

@@ -1,0 +1,373 @@
+var puntos = {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 0,
+        "Hito": "Desembarco en busca de un punto elevado para observar el entorno inmediato.",
+        "title": "Primer avistamiento y desembarco de las naves",
+        "pie": "↑ Hito conmemorativo en Punta Dungenes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.55606079101562,
+          -52.343729618307165
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 1,
+        "Hito": "El angulo de visión no permite divisar la abertura del canal existente.",
+        "title": "Observación desde el Monte Dinero",
+        "pie": "← Campo visual desde Monte Dinero"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -68.57322692871094,
+          -52.32463881610999
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 2,
+        "Hito": "Todas las naves se agrupan en Bahía Posesión para coordinación general.",
+        "title": "Fondeo en bahía Posesión",
+        "pie": "↑ Vista actual de Bahía Posesión"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.09027099609375,
+          -52.206765109213755
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 3,
+        "Hito": "Las naves San Antonio y Concepción realizan reconocimiento preliminar.",
+        "title": "Exploración de naves San Antonio y Concepción",
+        "pie": "↑ Vista actual en Segunda Angostura"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.26031494140625,
+          -52.70801127258512
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 4,
+        "Hito": "Simultáneamente, la Trinidad y la Victoria recorren el entorno cercano.",
+        "title": "Reconocimiento de las naves Trinidad y Victoria",
+        "pie": "↑ Vista actual, aguas sector primera Bahía"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.25787353515625,
+          -52.44261787120723
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 5,
+        "Hito": "Después de tres días, todas las naves se agrupan y descansan en Bahía Posesión.",
+        "title": "Regreso y reunión en Bahía Posesión",
+        "pie": "↑ Costa norte del estrecho frente a Bahía Posesión"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.1314697265625,
+          -52.22527582766327
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 6,
+        "Hito": "Todas las naves avanzan por el estrecho hasta el tramo Bahías Santiago - San Gregorio.",
+        "title": "Avance hasta segundo espacio interior",
+        "pie": "↑ Vista actual de Bahía Lomas"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.87716674804688,
+          -52.545460563582985
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 7,
+        "Hito": "En remo a tierra, se identifica estructura humana con más de doscientas sepulturas indígenas.",
+        "title": "Bote a remos: presencia humana",
+        "pie": "↑ Toldos patagones en San Gregorio.\nDibujo de Conrad Martens, 1832"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.85759735107422,
+          -52.48884322576228
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 8,
+        "Hito": "Desembarco y registro de latitud en punta San Silvestre (isla Isabel.)",
+        "title": "Avance hasta el tercer espacio interior",
+        "pie": '↑ Medición de altitud por altura del sol.\n"El arte de navegar", Pedro de Medina, 1545'
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.62629699707031,
+          -52.83720263632531
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 9,
+        "Hito": "Exploración, cruce a la costa opuesta y regreso a rada Pelícano.",
+        "title": "Reconocimiento de la costa fueguina",
+        "pie": '↑ Vista actual costa oriental,\ninmediaciones de Puerto Percy'
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.78697204589842,
+          -52.94408667042794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 10,
+        "Hito": "Mediciones, observaciones y junta de capitanes y pilotos.",
+        "title": "Fondeo en rada Pelícano",
+        "pie": '↑ Ilustración que muestra a Magallanes haciendo frente a cuestionamientos sobre el viaje'
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.78697204589842,
+          -52.94408667042794
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 11,
+        "Hito": "Bautizo canal de Todos los Santos y Fondeo en la costa de Brunswick.",
+        "title": "Navegación por el Paso Ancho",
+        "pie": '← Formaciones vegetales particulares del sector'
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.92636108398438,
+          -53.62835317337419
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 12,
+        "Hito": "Trinidad y Victoria toman el suroccidente. San Antonio y Concepción exploran isla Dawson.",
+        "title": "Exploración extensiva: las naves se separan",
+        "pie": '↑ Bifurcación entre islas, sector Bahía Parry '
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.78765869140625,
+          -53.79416183737104
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 13,
+        "Hito": "En ausencia de otras naves, Esteban Gómez protagoniza el motín y toma de la San Antonio.",
+        "title": "Oportunidad y amotinamiento en la San Antonio",
+        "pie": '↑ Retrato de Esteban Gómez '
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.94146728515625,
+          -53.66417110963304
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 14,
+        "Hito": "Después de 4 días de navegación, la San Antonio abandona el Estrecho el 11 de noviembre.",
+        "title": "San Antonio deserción y regreso",
+        "pie": '↑ Nao San Antonio'
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.61050415039062,
+          -53.030477889819295
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 15,
+        "Hito": "Reconocimiento paso del Hambre, paso Froward e Inglés, y fondeo en puerto de las Sardinas.",
+        "title": "Trinidad y Victoria navegan hasta bahía Fortescue",
+        "pie": '↑ Plano de la Bahía Fortescue y de Caleta Gallant'
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.00164794921875,
+          -53.69467375122692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 16,
+        "Hito": "Reconocimiento paso del Hambre, paso Froward e Inglés, y fondeo en puerto de las Sardinas.",
+        "title": "Trinidad y Victoria navegan hasta bahía Fortescue",
+        "pie": '↑ Plano de la Bahía Fortescue y de Caleta Gallant'
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.00164794921875,
+          -53.69467375122692
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 17,
+        "Hito": "Registros de latitud, colectas de flora y fauna, y búsqueda de sitio de observación.",
+        "title": "Bote a remos: exploración y búsqueda para observar",
+        "pie": '↑ Vista actual de Cerro El Morrión'
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.50736236572266,
+          -53.5788499895572
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 18,
+        "Hito": "Avistamiento exitoso del final del estrecho, nombrado como Cabo Deseado.",
+        "title": "Observación desde Cerro El Morrión",
+        "pie": '← Campo visual desde Cerro Morrión'
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.32525634765625,
+          -52.736291655910904
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 19,
+        "Hito": "Se ordena a Victoria navegar hasta la entrada del Estrecho buscando a la San Antonio.",
+        "title": "Trinidad y Victoria regresan, búsqueda de la San Antonio",
+        "pie": '↑ sector Puerto de Hambre.\nDibujo sobre la expedición posterior\nde Phillip Parker King'
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.95932006835938,
+          -53.66417110963304
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 20,
+        "Hito": "Colocación de señales (cruces) en la isla de los Pájaros, para casos de extravío.",
+        "title": "Encuentro del grupo y reanudación del recorrido",
+        "pie": '↑ A partir de ahora son sólo tres naves. "Descubrimiento del estrecho de Magallanes",\nóleo de Horacio García (1920)'
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.91949462890624,
+          -53.6143026119397
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 21,
+        "Hito": "Intercambio de cartas entre capitanes, descanso y preparativos al viaje.",
+        "title": "Navegación hasta puerto de Las Sardinas",
+        "pie": '↑ Vista actual del Parque Nacional Kaweskar'
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -71.98310852050781,
+          -53.70453154658815
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "s": 22,
+        "Hito": "Navegación, salida del estrecho y bautizo del Océano Pacífico.",
+        "title": "Salida al Océano Pacífico",
+        "pie": '↑ Vista actual sector Cabo deseado'
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.35272216796875,
+          -52.85420569896365
+        ]
+      }
+    }
+  ]
+}
