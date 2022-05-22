@@ -14,7 +14,7 @@ image: assets/images/aefh_tapa.jpg
 		<header class="major">
 			<h2>Archivo Espacial de Fotografía Histórica</h2>
 		</header>
-		<span class="image main"><img src="{{ site.baseurl }}/{{ post.image }}" alt="" /></span>
+		<span class="image main"><img src="assets/images/aefh_tapa.jpg" alt="" /></span>
 
 <!-- Content -->
 <h3 id="content">Resumen</h3>
