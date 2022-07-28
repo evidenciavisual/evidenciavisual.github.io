@@ -40,13 +40,17 @@ image: assets/images/aefh_tapa.jpg
 			</tr>
 		</thead>
 		<tbody>
+			<tr>
+		        <td>01/07/2022</td>
+		        <td>El proyecto fue presentado integralmente en el contexto del conversatorio <i>"Memoria / Datos / Vigilancia. Experiencias Contemporáneas de investigación fotográfica en Chile"</i>, organizado por CenFoto y la Escuela de Historia UDP.</td>
+		    </tr>
 		    <tr>
 		        <td>29/05/2022</td>
-		        <td>El proyecto se dará a conocer a las audiencias objetivo en Chile en una Charla online, en el contexto del Día del Patrimonio Cultural 2022.</td>
+		        <td>La segunda etapa del proyecto se dio a conocer a las audiencias objetivo en Chile en una Charla online, en el contexto del <i>Día del Patrimonio Cultural 2022</i>, con el apoyo del Centro de Patrimonio Cultural UC.</td>
 		    </tr>
 		    <tr>
 		        <td>26/05/2022</td>
-		        <td>La ponencia <i>"En torno a la creación del Archivo Espacial de Fotografía Histórica. Relaciones y disociaciones espaciales en los registros históricos de Santiago de Chile en el primer tercio del siglo XX"</i> será expuesta en el Foro 2022 organizada por Fotobservatorio del Patrimonio Fotográfico Mexicano, Ciudad de México. Premio Buenas Prácticas al "Mejor ensayo".</td>
+		        <td>La ponencia <i>"En torno a la creación del Archivo Espacial de Fotografía Histórica. Relaciones y disociaciones espaciales en los registros históricos de Santiago de Chile en el primer tercio del siglo XX"</i> se expuso en el Foro 2022 organizada por Fotobservatorio del Patrimonio Fotográfico Mexicano, Ciudad de México. Premio Buenas Prácticas al "Mejor ensayo".</td>
 		    </tr>
 		    <tr>
 		        <td>11/01/2022</td>
