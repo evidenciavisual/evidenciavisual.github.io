@@ -18,7 +18,7 @@ image: assets/images/aefh_tapa.jpg
 
 <!-- Content -->
 <h3 id="content">Resumen</h3>
-<p>El proyecto consiste en el diseño, formulación e implementación de una plataforma digital que permite descubrir y localizar las fotografías históricas asociadas a inmuebles y entornos urbanos, basada en una cartografía interactiva que incorpora un innovador mecanismo de búsquedas espaciales. Gracias a ello, se vuelve posible interrogar a la plataforma con preguntas del tipo “en qué imágenes aparece este edificio”, algo que no era posible hasta ahora. Contar con una funcionalidad de este tipo es de especial interés, tanto para los repositorios institucionales que administran esas colecciones fotográficas como para los investigadores y público en general, para superar las limitaciones de los sistemas de búsqueda actuales basados en palabras clave, y las limitaciones que plantean para encontrar el contenido deseado.</p>
+<p>El proyecto consiste en el diseño, formulación e implementación de una plataforma digital que permite descubrir y localizar las fotografías históricas asociadas a inmuebles y entornos urbanos, basada en una cartografía interactiva que incorpora un innovador mecanismo de búsquedas espaciales. Gracias a ello, se vuelve posible interrogar a la plataforma con preguntas del tipo “en cuáles imágenes aparece este edificio”, algo que no era posible hasta ahora. Contar con una funcionalidad de este tipo es de especial interés, tanto para los repositorios institucionales que administran esas colecciones fotográficas como para los investigadores y público en general, para superar las limitaciones de los sistemas de búsqueda actuales basados en palabras clave, y los obstáculos que plantean para encontrar el contenido deseado.</p>
 
 
 <h3>Etapas</h3>
@@ -40,6 +40,14 @@ image: assets/images/aefh_tapa.jpg
 			</tr>
 		</thead>
 		<tbody>
+			<tr>
+		        <td>23/08/2022</td>
+		        <td>La ponencia <i>"Expanding the archive into the spatial: New digital tools for understanding and re-reading historical photographic archives and their intentions from a three-dimensional approach"</i> fue seleccionada por el comité científico para presentarse en la 6th International Conference of Photography and Theory (ICPT2022), Nicossia, Chipre.</td>
+		    </tr>
+			<tr>
+		        <td>10/08/2022</td>
+		        <td>En una charla de una hora de duración, el proyecto fue presentado en el contexto del programa de <i>Diplomado en Visualización de Datos</i>, organizado por la Escuela de Diseño UC, donde se expuso el estado de avance y se respondieron preguntas de los estudiantes.</td>
+		    </tr>
 			<tr>
 		        <td>01/07/2022</td>
 		        <td>El proyecto fue presentado integralmente en el contexto del conversatorio <i>"Memoria / Datos / Vigilancia. Experiencias Contemporáneas de investigación fotográfica en Chile"</i>, organizado por CenFoto y la Escuela de Historia UDP.</td>
@@ -86,7 +94,7 @@ image: assets/images/aefh_tapa.jpg
 		    </tr>
 		    <tr>
 		        <td>04/09/2019</td>
-		        <td>La ponencia </i>"Reconstrucción del espacio-ciudad. Registros históricos (1900-1930) y análisis espacial desde la arquitectura"</i> fue presentada al IX Encuentro Internacional de Investigación sobre Cine Chileno y Latinoamericano. Cineteca Nacional de Chile del Centro Cultural Palacio La Moneda, Santiago, Chile.</td>
+		        <td>La ponencia <i>"Reconstrucción del espacio-ciudad. Registros históricos (1900-1930) y análisis espacial desde la arquitectura"</i> fue presentada al IX Encuentro Internacional de Investigación sobre Cine Chileno y Latinoamericano. Cineteca Nacional de Chile del Centro Cultural Palacio La Moneda, Santiago, Chile.</td>
 		    </tr>
 		    <tr>
 		        <td>03/09/2019</td>
