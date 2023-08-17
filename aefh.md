@@ -22,12 +22,12 @@ image: assets/images/aefh_tapa.jpg
 
 
 <h3>Etapas</h3>
-<p>Como parte de un diseño inicial, su desarrollo está planteado como una iniciativa macro a 5 años, dividida en 3 etapas que avanzan secuencialmente:</p>
+<p>Como parte de un diseño inicial, su desarrollo está planteado como una iniciativa macro a 6 años, dividida en 3 etapas que avanzan secuencialmente:</p>
 
 <ul class="alt">
 	<li><b>Etapa 1: Desarrollo tecnológico</b><br><span>03/2019 - 02/2022. Una primera etapa se plantea proponer, desarrollar y validar la base tecnológica en la que el sistema se sustenta, a través de proyectos puntuales.</span></li>
-	<li><b>Etapa 2: Marcha blanca</b><br><span>05/2022 - 04/2023. Segunda etapa, orientada a darle visibilidad al proyecto entre los archivos fotográficos, incluyendo un período de marcha blanca cerrada a instituciones seleccionadas.</span></li>
-	<li><b>Etapa 3: Implementación plataforma</b><br><span>04/2023 - 03/2024. Tercera etapa y final, enfocada en implementar la plataforma en su versión definitiva, y dar acceso amplio para su uso a instituciones y audiencias definidas.</span></li>
+	<li><b>Etapa 2: Marcha blanca</b><br><span>05/2022 - 09/2023. Segunda etapa, orientada a darle visibilidad al proyecto entre los archivos fotográficos, incluyendo un período de marcha blanca cerrada a instituciones seleccionadas.</span></li>
+	<li><b>Etapa 3: Implementación plataforma</b><br><span>12/2023 - 12/2024. Tercera etapa y final, enfocada en implementar la plataforma en su versión definitiva, y dar acceso amplio para su uso a instituciones y audiencias definidas.</span></li>
 </ul>
 
 <h3>Noticias</h3>
@@ -40,6 +40,10 @@ image: assets/images/aefh_tapa.jpg
 			</tr>
 		</thead>
 		<tbody>
+			<tr>
+		        <td>25/11/2022</td>
+		        <td>La ponencia <i>"Virtualización urbana con fotografías históricas: gestión del conocimiento mediante la "cadena de evidencias visuales""</i> fue expuesta en el I Congreso Internacional sobre Narrativas Digitales y Virtualización del Patrimonio, organizado por la Universidad de Alicante, España.</td>
+		    </tr>
 			<tr>
 		        <td>23/08/2022</td>
 		        <td>La ponencia <i>"Expanding the archive into the spatial: New digital tools for understanding and re-reading historical photographic archives and their intentions from a three-dimensional approach"</i> fue seleccionada por el comité científico para presentarse en la 6th International Conference of Photography and Theory (ICPT2022), Nicossia, Chipre.</td>
