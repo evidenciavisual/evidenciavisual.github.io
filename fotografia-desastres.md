@@ -18,17 +18,12 @@ image: assets/images/desastres_tapa.png
 
 <!-- Content -->
 <h3 id="content">Resumen</h3>
-<p>En el ámbito de la gestión patrimonial frente a riesgos de desastres, las colecciones de fotografía histórica representan un recurso clave para comprender los impactos de catástrofes pasadas sobre la infraestructura patrimonial y fortalecer la resiliencia frente a futuros desastres. Sin embargo, la dificultad para extraer información espacial a partir de registros analógicos digitalizados ha limitado hasta ahora su aprovechamiento sistemático. El trabajo propone un flujo de procesamiento innovador basado en métodos de aprendizaje profundo para superar dichas limitaciones, estimando la profundidad de la imagen utilizando modelos predictivos, y la correlación espacial en puntos de control georreferenciados con procesos iterativos. La metodología fue ensayada con un corpus de 300 fotografías correspondientes a terremotos históricos ocurridos en Chile durante el siglo XX (1906, 1939, 1960 y 1985). Los resultados preliminares confirman la viabilidad de obtener parámetros de calibración, y abren nuevas posibilidades para extraer información espacial de colecciones fotográficas históricas, fortaleciendo los estudios de patrimonio en riesgo, y contribuyendo a una cultura de resiliencia frente a desastres mediante la integración de memoria visual y su apropiación social.</p>
+<p>En el ámbito de la gestión patrimonial frente a riesgos de desastres, las colecciones de fotografía histórica representan un recurso clave para comprender los impactos de catástrofes pasadas sobre la infraestructura patrimonial y fortalecer la resiliencia frente a eventos futuros. Sin embargo, la dificultad para extraer información espacial a partir de registros analógicos digitalizados ha limitado hasta ahora su aprovechamiento sistemático. El trabajo propone un flujo de procesamiento innovador basado en métodos de aprendizaje profundo para superar dichas limitaciones, estimando la profundidad de la imagen utilizando modelos predictivos, y la correlación espacial en puntos de control georreferenciados con procesos iterativos. La metodología fue ensayada con un corpus de 300 fotografías correspondientes a terremotos históricos ocurridos en Chile durante el siglo XX (1906, 1939, 1960 y 1985). Los resultados preliminares confirman la viabilidad de obtener parámetros de calibración, y abren nuevas posibilidades para extraer información espacial de colecciones fotográficas históricas, fortaleciendo los estudios de patrimonio en riesgo, y contribuyendo a una cultura de resiliencia frente a desastres mediante la integración de memoria visual y su apropiación social.</p>
 
 
-<h3>Etapas</h3>
-<p>Como parte de un diseño inicial, su desarrollo está planteado como una iniciativa macro a 6 años, dividida en 3 etapas que avanzan secuencialmente:</p>
+<h3>Conexiones</h3>
+<p>El proyecto se apoya y expande en las posibilidades técnicas de conversión de fotografías históricas a nubes de puntos y georeferenciación asistida por medios computacionales, ambas ideas ya planteadas en los proyectos de <a href="#"><i>Archivo Espacial de Fotografía Histórica</i></a>, <a href="#"><i>Datación de fotografías con estudios de sombras</i></a>, y <a href="#"><i>Restitución del trazado de tranvías de Santiago</i></a>. En relación a los estudios orientados a la conservación preventiva del patrimonio construido, también se vincula con el proyecto <a href="#"><i>Documentando el pasado del Foro Romano</i></a> y <a href="#"><i>La Moneda post-bombardeo</i></a>.</p>
 
-<ul class="alt">
-	<li><b>Etapa 1: Desarrollo tecnológico</b><br><span>03/2019 - 02/2022. Una primera etapa se enfoca en proponer, desarrollar y validar la base tecnológica en la que el sistema se sustenta, a través de proyectos puntuales.</span></li>
-	<li><b>Etapa 2: Marcha blanca</b><br><span>05/2022 - 09/2024. Segunda etapa, orientada a darle visibilidad al proyecto entre los archivos fotográficos, incluyendo un período de marcha blanca cerrada a instituciones seleccionadas.</span></li>
-	<li><b>Etapa 3: Implementación plataforma</b><br><span>12/2024 - 12/2026. Tercera etapa y final, enfocada en implementar la plataforma en su versión definitiva, y dar acceso amplio para su uso a instituciones y audiencias definidas.</span></li>
-</ul>
 
 <h3>Noticias</h3>
 <div class="table-wrapper">
@@ -41,16 +36,16 @@ image: assets/images/desastres_tapa.png
 		</thead>
 		<tbody>
 			<tr>
-		        <td>20/03/2023</td>
-		        <td>El paper presentado en la 26th International Conference on Cultural Heritage and New Technologies 2021, fue seleccionado para su publicación en las actas de la conferencia, editadas por ICOMOS Austria a través de Propylaeum Ebook Series.</td>
-		    </tr>
-			<tr>
-		        <td>25/11/2022</td>
-		        <td>La ponencia <i>"Virtualización urbana con fotografías históricas: gestión del conocimiento mediante la "cadena de evidencias visuales""</i> fue expuesta en el I Congreso Internacional sobre Narrativas Digitales y Virtualización del Patrimonio, organizado por la Universidad de Alicante, España.</td>
+		        <td>21/10/2025</td>
+		        <td>La ponencia <i>"Unlocking Spatial Memory: Deep Learning for Spatial Analysis of Historical Photography in Disaster Heritage Studies"</i> fue seleccionada por el comité evaluador para ser expuesta en la conferencia <i>"Ctrl+S Culture: AI and Cultural Heritage"</i>, organizada por ICCROM y su programa First Aid and Resilience for Cultural Heritage in Times of Crisis (FAR), a realizarse en noviembre de este año.</td>
 		    </tr>
 		    <tr>
-		        <td>06/10/2020</td>
-		        <td>La ponencia <i>"Reconstruyendo 'Conical Intersect': estudio tridimensional a la intervención efímera a partir de la obra fotográfica de Matta-Clark"</i> fue presentada al IV Encuentro Nacional sobre registro, documentación y conservación de Arte Contemporáneo. Museo nacional de Bellas Artes, Buenos Aires, Argentina.</td>
+		        <td>30/09/2025</td>
+		        <td>El paper <i>"Fotografía histórica y visión por computador: nuevas perspectivas para la gestión de riesgos patrimoniales"</i> fue enviado para consideración en el I Congreso Nacional de Intervención en el Patrimonio Arquitectónico y Urbano CIPAU 2026, organizado por la Facultad de Arquitectura y Urbanismo de la Universidad de Chile, ICOMOS Chile, y el Comité de Patrimonio Arquitectónico y Ambiental del Colegio de Arquitectos de Chile.</td>
+		    </tr>
+			<tr>
+		        <td>21/03/2024</td>
+		        <td>EL proyecto aseguró financiamiento inicial, lo que permitirá identificar las fotografías con las que se estará trabajando, centradas en un corpus de 300 fotografías correspondientes a terremotos históricos ocurridos en Chile durante el siglo XX (1906, 1939, 1960 y 1985), en las principales ciudades de Chile, como Valparaíso, Chillán, Valdivia, Constitución, y Santiago.</td>
 		    </tr>
 		</tbody>
 <!-- 		<tfoot>
