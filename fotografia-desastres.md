@@ -2,7 +2,7 @@
 layout: page
 title: Fotografia y desastres
 nav-menu: true
-image: assets/images/aefh_tapa.jpg
+image: assets/images/desastres_tapa.png
 ---
 
 <!-- Main -->
@@ -14,11 +14,11 @@ image: assets/images/aefh_tapa.jpg
 		<header class="major">
 			<h2>Fotografía histórica y desastres</h2>
 		</header>
-		<span class="image main"><img src="https://evidenciavisual.org/assets/images/aefh_tapa.jpg" alt="" /></span>
+		<span class="image main"><img src="https://evidenciavisual.org/assets/images/desastres_tapa.png" alt="" /></span>
 
 <!-- Content -->
 <h3 id="content">Resumen</h3>
-<p>El proyecto consiste en el diseño, formulación e implementación de una plataforma digital que permite descubrir y localizar las fotografías históricas asociadas a inmuebles y entornos urbanos, basada en una cartografía interactiva que incorpora un innovador mecanismo de búsquedas espaciales. Gracias a ello, se vuelve posible interrogar a la plataforma con preguntas del tipo “en cuáles imágenes aparece este edificio”, algo que no era posible hasta ahora. Contar con una funcionalidad de este tipo es de especial interés, tanto para los repositorios institucionales que administran esas colecciones fotográficas como para los investigadores y público en general, para superar las limitaciones de los sistemas de búsqueda actuales basados en palabras clave, y los obstáculos que plantean para encontrar el contenido deseado.</p>
+<p>En el ámbito de la gestión patrimonial frente a riesgos de desastres, las colecciones de fotografía histórica representan un recurso clave para comprender los impactos de catástrofes pasadas sobre la infraestructura patrimonial y fortalecer la resiliencia frente a futuros desastres. Sin embargo, la dificultad para extraer información espacial a partir de registros analógicos digitalizados ha limitado hasta ahora su aprovechamiento sistemático. El trabajo propone un flujo de procesamiento innovador basado en métodos de aprendizaje profundo para superar dichas limitaciones, estimando la profundidad de la imagen utilizando modelos predictivos, y la correlación espacial en puntos de control georreferenciados con procesos iterativos. La metodología fue ensayada con un corpus de 300 fotografías correspondientes a terremotos históricos ocurridos en Chile durante el siglo XX (1906, 1939, 1960 y 1985). Los resultados preliminares confirman la viabilidad de obtener parámetros de calibración, y abren nuevas posibilidades para extraer información espacial de colecciones fotográficas históricas, fortaleciendo los estudios de patrimonio en riesgo, y contribuyendo a una cultura de resiliencia frente a desastres mediante la integración de memoria visual y su apropiación social.</p>
 
 
 <h3>Etapas</h3>
