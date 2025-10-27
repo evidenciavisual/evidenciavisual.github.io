@@ -41,12 +41,12 @@ image: assets/images/aefh_tapa.jpg
 		</thead>
 		<tbody>
 			<tr>
-		        <td>20/03/2023</td>
-		        <td>El paper presentado en la 26th International Conference on Cultural Heritage and New Technologies 2021, fue seleccionado para su publicación en las actas de la conferencia, editadas por ICOMOS Austria a través de Propylaeum Ebook Series.</td>
-		    </tr>
-			<tr>
 		        <td>25/11/2022</td>
 		        <td>La ponencia <i>"Virtualización urbana con fotografías históricas: gestión del conocimiento mediante la "cadena de evidencias visuales""</i> fue expuesta en el I Congreso Internacional sobre Narrativas Digitales y Virtualización del Patrimonio, organizado por la Universidad de Alicante, España.</td>
+		    </tr>
+		    <tr>
+		        <td>08/11/2022</td>
+		        <td>EL proyecto fue mencionado como caso innovador de las tecnologías aplicadas al patrimonio, por el Magister en Patrimonio UC en la categoría "Proyecto Comunidad MAPC".</td>
 		    </tr>
 			<tr>
 		        <td>23/08/2022</td>
@@ -77,20 +77,8 @@ image: assets/images/aefh_tapa.jpg
 		        <td>El workshop <i>"Point cloud processing for survey and study of historic buildings"</i> fue impartido en la XXV Conferencia Internacional de la Sociedad Iberoamericana de Gráfica Digital (SIGRADI).</td>
 		    </tr>
 		    <tr>
-		        <td>02/11/2021</td>
-		        <td>El paper <i>"Shadows analysis and viewshed georeferencing for dating of historical photographs. New possibilities for chronology studies of lost built heritage"</i> fue presentado en la 26th International Conference on Cultural Heritage and New Technologies 2021, Viena, Austria. ICOMOS Austria.</td>
-		    </tr>
-		    <tr>
-		        <td>08/10/2020</td>
-		        <td>El paper presentado en septiembre en la EuroCarto Central European Cartographic Conference fue seleccionado por la International Cartographic Association (ICA) y publicado en las actas Abstracts of the ICA, 2, 24 https://doi.org/10.5194/ica-abs-2-24-2020 </td>
-		    </tr>
-		    <tr>
 		        <td>06/10/2020</td>
 		        <td>La ponencia <i>"Reconstruyendo 'Conical Intersect': estudio tridimensional a la intervención efímera a partir de la obra fotográfica de Matta-Clark"</i> fue presentada al IV Encuentro Nacional sobre registro, documentación y conservación de Arte Contemporáneo. Museo nacional de Bellas Artes, Buenos Aires, Argentina.</td>
-		    </tr>
-		    <tr>
-		        <td>22/09/2020</td>
-		        <td>El paper <i>"A new method for using historical street photography collections as a primary source for cartographic production"</i> fue presentado en la EuroCarto Central European Cartographic Conference, International Cartographic Association (ICA) &amp; Universitat Wien, Viena, Austria.</td>
 		    </tr>
 		    <tr>
 		        <td>06/12/2019</td>
