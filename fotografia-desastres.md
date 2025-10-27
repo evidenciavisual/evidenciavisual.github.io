@@ -22,7 +22,7 @@ image: assets/images/desastres_tapa.png
 
 
 <h3>Conexiones</h3>
-<p>El proyecto se apoya y expande en las posibilidades técnicas de conversión de fotografías históricas a nubes de puntos y georeferenciación asistida por medios computacionales, ambas ideas ya planteadas en los proyectos de <a href="#"><i>Datación de fotografías con estudios de sombras</i></a>, y <a href="#"><i>Restitución del trazado de tranvías de Santiago</i></a>. En relación a los estudios orientados a la conservación preventiva del patrimonio construido, también se vincula con el proyecto <a href="#"><i>Documentando el pasado del Foro Romano</i></a> y <a href="#"><i>La Moneda post-bombardeo</i></a>. Respecto a herramientas de visualización y exploración de datos, el proyecto genera datos que pueden usarse para la búsqueda de fotografías por medios espaciales, un tema abordado en profundidad con el proyecto <a href="#"><i>Archivo Espacial de Fotografía Histórica</i></a>, y también para el estudio de los desastres y sus impactos, alimentando con datos el proyecto <a href="#"><i>Palimpsesto: Plataforma Espacial de Datos Patrimoniales</i></a></p>.
+<p>El proyecto se apoya y expande en las posibilidades técnicas de conversión de fotografías históricas a nubes de puntos y georeferenciación asistida por medios computacionales, ambas ideas ya planteadas en los proyectos de <a href="#"><i>Datación de fotografías con estudios de sombras</i></a>, y <a href="#"><i>Restitución del trazado de tranvías de Santiago</i></a>. En relación a los estudios orientados a la conservación preventiva del patrimonio construido, también se vincula con el proyecto <a href="#"><i>Documentando el pasado del Foro Romano</i></a> y <a href="#"><i>La Moneda post-bombardeo</i></a>. Respecto a herramientas de visualización y exploración de datos, el proyecto genera datos que pueden usarse para la búsqueda de fotografías por medios espaciales, un tema abordado en profundidad con el proyecto <a href="#"><i>Archivo Espacial de Fotografía Histórica</i></a>, y también para el estudio de los desastres y sus impactos, alimentando con datos el proyecto <a href="#"><i>Palimpsesto: Plataforma Espacial de Datos Patrimoniales</i></a>.</p>
 
 
 <h3>Noticias</h3>
@@ -45,7 +45,7 @@ image: assets/images/desastres_tapa.png
 		    </tr>
 			<tr>
 		        <td>21/03/2024</td>
-		        <td>EL proyecto aseguró financiamiento inicial, lo que permitirá identificar las fotografías con las que se estará trabajando, centradas en un corpus de 300 fotografías correspondientes a terremotos históricos ocurridos en Chile durante el siglo XX (1906, 1939, 1960 y 1985), en las principales ciudades de Chile, como Valparaíso, Chillán, Valdivia, Constitución, y Santiago.</td>
+		        <td>EL proyecto aseguró financiamiento inicial, lo que permitirá identificar las fotografías con las que se estará trabajando, centradas en un corpus de 300 fotografías correspondientes a terremotos históricos ocurridos en Chile durante el siglo XX (1906, 1939, 1960 y 1985), en las principales ciudades de Chile, como Valparaíso, Chillán, Valdivia, Concepción, y Santiago.</td>
 		    </tr>
 		</tbody>
 <!-- 		<tfoot>
